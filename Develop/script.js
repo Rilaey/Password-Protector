@@ -9,20 +9,20 @@ function generatePassword() {
     return;
   }
 
-  if (passwordLength < 8) {
-    window.prompt("Password is to short. Please enter a password between 8 - 128 characters.");
+  if (passwordLength < 8) { // password to short
+    window.alert("Password is to short. Please enter a password between 8 - 128 characters.");
     return;
-  } else if (passwordLength > 128) {
-    window.prompt("Password is to long. Please enter a password between 8 - 128 characters.");
+  } else if (passwordLength > 128) { // password to long 
+    window.alert("Password is to long. Please enter a password between 8 - 128 characters.");
     return;
   }
 
-  let numbers = window.confirm("Would you like to use numbers in your password?")
-  let lowerCase = window.confirm("Would you like to use lower case letters in your password?")
-  let upperCase = window.confirm("Would you like to use upper case letters in your password?")
-  let specialSymbols = window.confirm("Would you like to use special characters in your password?")
+  let numbers = window.confirm("Would you like to use numbers in your password?") // number yes/no
+  let lowerCase = window.confirm("Would you like to use lower case letters in your password?")// lower case yes/no
+  let upperCase = window.confirm("Would you like to use upper case letters in your password?")// upper case yes/no
+  let specialSymbols = window.confirm("Would you like to use special characters in your password?")// symbol yes/no
 
-  if (numbers === false, lowerCase === false, upperCase === false, specialSymbols === false) {
+  if (numbers === false, lowerCase === false, upperCase === false, specialSymbols === false) { 
     window.prompt("You must select atleast one of catagorys!");
     return;
   }
