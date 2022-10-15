@@ -1,5 +1,19 @@
 // Assignment code here
 
+function randomListItem(list) {
+  return list[randomInteger(list.length)]
+}
+
+function randomInteger(min, max) {
+  if (!max) {
+    max = min
+    min = 0
+  } 
+  let someThing = Math.random()
+  return Math.floor(min*(1 - someThing) + someThing * max)
+}
+
+
 function generatePassword() {
   let input = window.prompt("How long would you like your password to be? Select between 8 - 128 characters.")
   let passwordLength = parseInt(input)
@@ -22,18 +36,12 @@ function generatePassword() {
   let upperCase = window.confirm("Would you like to use upper case letters in your password?")// upper case yes/no
   let specialSymbols = window.confirm("Would you like to use special characters in your password?")// symbol yes/no
 
-  if (numbers === false, lowerCase === false, upperCase === false, specialSymbols === false) { 
-    window.prompt("You must select atleast one of catagorys!");
-    return;
-  }
-
   let numberList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   let lowerCaseList = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
   let upperCaseList = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
   let specialSymbolsList = ['!', '@', '#', '$', '%', '*', '(', ')', '+', ',', '<', '>', '=', '[', ']', '?']
 
   let userChoices = []
-  //console.log(userChoices)
 
   if (numbers === true) {
     userChoices.push(numberList);
@@ -51,17 +59,20 @@ function generatePassword() {
     userChoices.push(specialSymbolsList);
   }
 
-  let randomPassword = ''
-
-  function randomInt(min, max) {
-    return Math.floor(math.random()*(max - min) + min) // floor will remove the decimals
+  if (userChoices.length === 0) { 
+    window.prompt("You must select atleast one of catagorys!");
   }
+
+  let generatePassword = ''
 
   for (let x = 0; x < passwordLength; x++) {
-    let randomCharacter = userChoices[randomInt(0, userChoices.length - 1)] // 0 will be the min and userChoices - 1 will be the max 
+    let randomListCharacter = randomListItem(userChoices) // 0 will be the min and userChoices - 1 will be the max 
+    let randomCharacter = randomListItem(randomListCharacter)
+    generatePassword += randomCharacter
   }
-}
 
+  return generatePassword
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
