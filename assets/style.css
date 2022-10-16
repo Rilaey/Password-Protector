@@ -55,7 +55,8 @@ header {
 }
 
 .card-footer {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-footer::before {
@@ -86,6 +87,8 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
+  width: 40%;
+  margin-left: 200px;
 }
 
 button[disabled] {
@@ -116,6 +119,11 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
+}
+
+.copy-btn {
+  background-color: lightgray;
+  color: black;
 }
 
 @media (max-width: 690px) {
