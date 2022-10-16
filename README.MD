@@ -16,4 +16,4 @@
 
 - You can access the password generator at https://rilaey.github.io/Password-Protector/
 
-![screenshot of web application](./assets/screencapture-rilaey-github-io-Password-Protector-2022-10-16-12_42_39.png)
+![screenshot of web application](./assets/screencapture-127-0-0-1-5501-index-html-2022-10-16-19_21_23.png)
