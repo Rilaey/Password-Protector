@@ -94,7 +94,7 @@ generateBtn.addEventListener("click", writePassword);
 
 function copyFunction() {
   // Get the text field
-  let copyText = document.getElementById("copy");
+  var copyText = document.getElementById("password");
 
   // Select the text field
   copyText.select();
@@ -106,5 +106,5 @@ function copyFunction() {
   // Alert the copied text
   alert("Copied the text: " + copyText.value);
 
-  document.execCommand("copy")
+  document.execCommand('copy')
 }
